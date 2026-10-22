@@ -1,0 +1,171 @@
+/* Herald design tokens. Everything is scoped to .design-mode so nothing leaks into the host.
+ *
+ * Accent rule: --dm-accent (and -hover) are for FILLS / UI only. They need >= 3:1 against
+ * chrome and surface, and white (--dm-on-accent) text on them needs >= 4.5:1.
+ * Accent-colored TEXT must use --dm-accent-text, never --dm-accent.
+ */
+
+.design-mode {
+  /* colors (light) */
+  --dm-chrome: #f4f3ef;
+  --dm-surface: #ffffff;
+  --dm-surface-hover: #eceae4;
+  --dm-surface-raised: #ffffff;
+  --dm-border: #e5e2da;
+  --dm-border-strong: #d6d2c8;
+  --dm-text: #1d1c1a;
+  --dm-text-2: #57534d;
+  --dm-text-3: #6e6960;
+  --dm-accent: #137c7a;
+  --dm-accent-hover: #0f6a68;
+  --dm-accent-soft: #e2f2f0;
+  --dm-accent-muted: #137c7a1a;
+  --dm-accent-border: #137c7a33;
+  --dm-accent-text: #0e6261;
+  --dm-on-accent: #ffffff;
+  --dm-success: #297b4e;
+  --dm-success-soft: #e3f3ea;
+  --dm-danger: #bd3f2c;
+  --dm-danger-soft: #fbe9e5;
+  --dm-shadow: #1d1c1a14;
+  --dm-overlay: #1d1c1a66;
+  --dm-ring: var(--dm-accent);
+
+  /* radius */
+  --dm-radius-xs: 4px;
+  --dm-radius-sm: 7px;
+  --dm-radius-md: 9px;
+  --dm-radius-lg: 12px;
+  --dm-radius-xl: 16px;
+  --dm-radius-full: 999px;
+
+  /* spacing */
+  --dm-space-1: 2px;
+  --dm-space-2: 4px;
+  --dm-space-3: 8px;
+  --dm-space-4: 12px;
+  --dm-space-5: 16px;
+  --dm-space-6: 20px;
+  --dm-space-7: 24px;
+  --dm-space-8: 32px;
+
+  /* type */
+  --dm-size-xl: 22px;
+  --dm-size-lg: 16px;
+  --dm-size-input: 14px;
+  --dm-size-body: 13.5px;
+  --dm-size-md: 13px;
+  --dm-size-sm: 12.5px;
+  --dm-size-xs: 11px;
+  --dm-font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --dm-font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* elevation */
+  --dm-shadow-raised: 0 2px 8px var(--dm-shadow);
+  --dm-shadow-panel: 0 1px 3px var(--dm-shadow);
+
+  font-family: var(--dm-font-sans);
+  color: var(--dm-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.design-mode.dark {
+  --dm-chrome: #1b1a1e;
+  --dm-surface: #26252a;
+  --dm-surface-hover: #2d2c32;
+  --dm-surface-raised: #3b3a41;
+  --dm-border: #34333a;
+  --dm-border-strong: #46444c;
+  --dm-text: #edecef;
+  --dm-text-2: #b5b3ba;
+  --dm-text-3: #94939a;
+  --dm-accent: #177f7c;
+  --dm-accent-hover: #17837f;
+  --dm-accent-soft: #15302f;
+  --dm-accent-muted: #177f7c26;
+  --dm-accent-border: #177f7c40;
+  --dm-accent-text: #63cfc9;
+  --dm-on-accent: #ffffff;
+  --dm-success: #4cc38a;
+  --dm-success-soft: #173226;
+  --dm-danger: #f07b65;
+  --dm-danger-soft: #3a1f1a;
+  --dm-shadow: #00000059;
+  --dm-overlay: #000000a6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .design-mode,
+  .design-mode *,
+  .design-mode *::before,
+  .design-mode *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@theme inline {
+  --color-dm-chrome: var(--dm-chrome);
+  --color-dm-surface: var(--dm-surface);
+  --color-dm-surface-hover: var(--dm-surface-hover);
+  --color-dm-surface-raised: var(--dm-surface-raised);
+  --color-dm-border: var(--dm-border);
+  --color-dm-border-strong: var(--dm-border-strong);
+  --color-dm-text: var(--dm-text);
+  --color-dm-text-2: var(--dm-text-2);
+  --color-dm-text-3: var(--dm-text-3);
+  --color-dm-accent: var(--dm-accent);
+  --color-dm-accent-hover: var(--dm-accent-hover);
+  --color-dm-accent-soft: var(--dm-accent-soft);
+  --color-dm-accent-muted: var(--dm-accent-muted);
+  --color-dm-accent-border: var(--dm-accent-border);
+  --color-dm-accent-text: var(--dm-accent-text);
+  --color-dm-on-accent: var(--dm-on-accent);
+  --color-dm-success: var(--dm-success);
+  --color-dm-success-soft: var(--dm-success-soft);
+  --color-dm-danger: var(--dm-danger);
+  --color-dm-danger-soft: var(--dm-danger-soft);
+  --color-dm-shadow: var(--dm-shadow);
+  --color-dm-overlay: var(--dm-overlay);
+  --color-dm-ring: var(--dm-ring);
+
+  --radius-dm-xs: var(--dm-radius-xs);
+  --radius-dm-sm: var(--dm-radius-sm);
+  --radius-dm-md: var(--dm-radius-md);
+  --radius-dm-lg: var(--dm-radius-lg);
+  --radius-dm-xl: var(--dm-radius-xl);
+  --radius-dm-full: var(--dm-radius-full);
+
+  --spacing-dm-1: var(--dm-space-1);
+  --spacing-dm-2: var(--dm-space-2);
+  --spacing-dm-3: var(--dm-space-3);
+  --spacing-dm-4: var(--dm-space-4);
+  --spacing-dm-5: var(--dm-space-5);
+  --spacing-dm-6: var(--dm-space-6);
+  --spacing-dm-7: var(--dm-space-7);
+  --spacing-dm-8: var(--dm-space-8);
+
+  --text-dm-xl: var(--dm-size-xl);
+  --text-dm-xl--line-height: 1.3;
+  --text-dm-lg: var(--dm-size-lg);
+  --text-dm-lg--line-height: 1.4;
+  --text-dm-input: var(--dm-size-input);
+  --text-dm-input--line-height: 1.5;
+  --text-dm-body: var(--dm-size-body);
+  --text-dm-body--line-height: 1.55;
+  --text-dm-md: var(--dm-size-md);
+  --text-dm-md--line-height: 1.4;
+  --text-dm-sm: var(--dm-size-sm);
+  --text-dm-sm--line-height: 1.4;
+  --text-dm-xs: var(--dm-size-xs);
+  --text-dm-xs--line-height: 1.35;
+
+  --font-dm-sans: var(--dm-font-sans);
+  --font-dm-mono: var(--dm-font-mono);
+
+  --shadow-dm-raised: var(--dm-shadow-raised);
+  --shadow-dm-panel: var(--dm-shadow-panel);
+}

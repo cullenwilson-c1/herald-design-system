@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Preview placeholder (host product)</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; display: flex; height: 100vh; font: 13px/1.4 Inter, system-ui, sans-serif; color: #1d1c1a; background: #fbfaf8; }
+  .rail { width: 50px; border-right: 1px solid #ebe8e1; background: #fff; display: flex; flex-direction: column; align-items: center; padding: 14px 0; gap: 10px; }
+  .logo { width: 28px; height: 28px; border-radius: 8px; background: #3e63dd; color: #fff; font-weight: 700; font-size: 11px; display: grid; place-items: center; margin-bottom: 8px; }
+  .ico { width: 34px; height: 34px; border-radius: 8px; display: grid; place-items: center; }
+  .ico i { width: 16px; height: 16px; border-radius: 4px; background: #b4b0a6; }
+  .ico.on { background: #f0eee9; } .ico.on i { background: #1d1c1a; }
+  main { flex: 1; padding: 28px 36px; overflow: auto; }
+  h1 { font-size: 20px; margin: 0 0 4px; } .sub { color: #6b6760; margin-bottom: 20px; }
+  .card { background: #fff; border: 1px solid #ebe8e1; border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; }
+  .card h2 { font-size: 14px; margin: 0 0 12px; display: flex; justify-content: space-between; align-items: center; }
+  .row { display: flex; gap: 48px; color: #6b6760; } .row b { display: block; color: #1d1c1a; font-size: 18px; margin-top: 2px; }
+  .btn { border: 1px solid #d6d2c8; background: #fff; border-radius: 8px; padding: 5px 12px; font-size: 12px; }
+  table { width: 100%; border-collapse: collapse; } th, td { text-align: left; padding: 8px 0; border-top: 1px solid #ebe8e1; font-size: 12px; } th { color: #6b6760; font-weight: 500; border-top: 0; }
+</style>
+</head>
+<body>
+  <nav class="rail">
+    <div class="logo">C1</div>
+    <div class="ico"><i></i></div><div class="ico"><i></i></div><div class="ico"><i></i></div>
+    <div class="ico on"><i></i></div><div class="ico"><i></i></div>
+  </nav>
+  <main>
+    <h1>Adobe</h1>
+    <div class="sub">Integrates with Adobe</div>
+    <section class="card"><h2>Access requests <span class="btn">Edit</span></h2>
+      <div class="row"><div>Open revocations<b>0</b></div><div>Open requests<b>4</b></div><div>Request policy<b>App Owner Approval</b></div></div></section>
+    <section class="card"><h2>Accounts management</h2>
+      <div class="row"><div>Total accounts<b>1</b></div><div>External accounts<b>0</b></div><div>Provisioning<b>Configured</b></div></div></section>
+    <section class="card"><h2>MCP servers <span class="btn" id="add-mcp">Add MCP server</span></h2>
+      <table><tr><th>Display name</th><th>Data sensitivity</th><th>Connection</th><th>Approved tools</th></tr>
+      <tr><td>Adobe</td><td>Unspecified</td><td>Configured</td><td>0</td></tr></table></section>
+  </main>
+</body>
+</html>
+<style>
+  html.dark body { background: #131216; color: #ecebef; }
+  html.dark .rail, html.dark .card { background: #1c1b20; border-color: #2a2930; }
+  html.dark .rail { border-right-color: #2a2930; }
+  html.dark .ico.on { background: #2a2930; } html.dark .ico.on i { background: #ecebef; } html.dark .ico i { background: #6d6b75; }
+  html.dark .btn { background: #1c1b20; border-color: #3a3940; color: #ecebef; }
+  html.dark .sub, html.dark .row, html.dark th { color: #9a98a3; } html.dark .row b { color: #ecebef; }
+  html.dark th, html.dark td { border-color: #2a2930; }
+</style>
+<script>
+  // Host-product placeholder only: follow `#...&dark` in the URL so the demo can show a dark preview.
+  function sync() { document.documentElement.classList.toggle("dark", location.hash.includes("dark")); }
+  addEventListener("hashchange", sync); sync();
+</script>
